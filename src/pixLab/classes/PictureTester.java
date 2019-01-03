@@ -18,6 +18,14 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testZeroRed()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.zeroRed();
+	  beach.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -25,6 +33,14 @@ public class PictureTester
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
+  }
+  
+  public static void testReverseMirrorVertical()
+  {
+	  Picture caterpillar = new Picture("caterpillar.jpg");
+	  caterpillar.explore();
+	  caterpillar.reverseMirrorVertical();
+	  caterpillar.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -81,5 +97,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+    testReverseMirrorVertical();
+    testZeroRed();
   }
 }
