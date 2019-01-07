@@ -160,6 +160,23 @@ public class Picture extends SimplePicture
     } 
   }
   
+  public void mirrorHorizontal()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel topPixel = null;
+	  Pixel bottomPixel = null;
+	  int height = pixels.length; //.?
+	  for (int col = 0; col < pixels.length; col++)
+	  {
+		  for (int row = 0; row < height / 2; row++)
+		  {
+			  topPixel = pixels[col][row];
+			  bottomPixel = pixels[col][height - 1 - row];
+			  bottomPixel.setColor(topPixel.getColor());
+		  }
+	  }
+  }
+  
   public void reverseMirrorVertical()
   {
 	Pixel[][] pixels = this.getPixels2D();
@@ -199,6 +216,31 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorGull()
+  {
+	  int mirrorPoint = 360;
+	  int leftPoint = 200 ;
+	  Pixel centerPixel = null;
+	  Pixel rightPixel = null;
+	  Pixel leftPixel = null;
+	  int count = 0;
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for (int row = 200; row < 330; row++)
+	  {
+		  for (int col = 220; col < mirrorPoint; col++)
+		  {
+			  centerPixel = pixels[row][col];
+			  rightPixel = pixels[row]
+					  			[mirrorPoint - col + mirrorPoint];
+			  rightPixel.setColor(centerPixel.getColor());
+			  
+			  leftPixel = pixels [leftPoint + col - leftPoint][row];
+			  leftPixel.setColor(centerPixel.getColor());
+		  }
+	  }
   }
   
   /** copy from the passed fromPic to the
@@ -245,6 +287,21 @@ public class Picture extends SimplePicture
     this.copy(flowerNoBlue,300,0);
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
+    this.mirrorVertical();
+    this.write("collage.jpg");
+  }
+  
+  public void messedUpCollage()
+  {
+    Picture Mountain = new Picture("SnowyMountains.jpg");
+    Picture GlitchMerc = new Picture("GlitchMerc.png");
+    this.copy(Mountain,0,0);
+    this.copy(GlitchMerc,100,0);
+    this.copy(Mountain,200,0);
+    Picture glitch = new Picture("glitch.png");
+    this.copy(glitch,300,0);
+    this.copy(Mountain,400,0);
+    this.copy(GlitchMerc,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
   }

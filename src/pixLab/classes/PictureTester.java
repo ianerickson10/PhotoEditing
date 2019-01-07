@@ -77,6 +77,30 @@ public class PictureTester
 	  beach.explore();
   }
   
+  public static void testMirrorHorizontal()
+  {
+	  Picture mountain = new Picture("SnowyMountains.JPG");
+	  mountain.explore();
+	  mountain.mirrorHorizontal();
+	  mountain.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture gull = new Picture("seagull.jpg");
+	  gull.explore();
+	  gull.mirrorGull();
+	  gull.explore();
+  }
+  
+  public static void testMessedUpCollage()
+  {
+	  Picture cumber = new Picture("CumberlandIsland.jpg");
+	  cumber.explore();
+	  cumber.messedUpCollage();
+	  cumber.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -92,9 +116,9 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
 //    testMirrorVertical();
-    //testMirrorTemple();
+//    testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+//    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
@@ -108,6 +132,8 @@ public class PictureTester
     //testGetAverageForColumn(0);
 //    testReverseMirrorVertical();
 //    testZeroRed();
-    testFilter();
+//    testFilter();
+//    testMirrorHorizontal();
+    testMessedUpCollage();
   }
 }

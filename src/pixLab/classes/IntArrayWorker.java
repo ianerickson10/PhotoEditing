@@ -48,9 +48,16 @@ public class IntArrayWorker
 	  return count;
   }
   
-  public int getColTotal()
+  public int getColTotal(int thisNumber)
   {
+	  int total = 0;
 	  
+	  for (int col = 0; col < matrix[0].length; col++)
+	  {
+		 
+	  }
+	  
+	  return total;
   }
   /**
    * Method to return the total 
