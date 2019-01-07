@@ -30,7 +30,28 @@ public class IntArrayWorker
 	  return count;
   }
   
+  public int getLargest()
+  {
+	  int largest = Integer.MIN_VALUE;
+	  
+	  for (int col = 0; col < matrix[0].length; col++)
+	  {
+		  for (int row = 0; row < matrix.length; row++)
+		  {
+			  while (count > matrix)
+			  {
+				  
+			  }
+		  }	
+	  }
+	  
+	  return count;
+  }
   
+  public int getColTotal()
+  {
+	  
+  }
   /**
    * Method to return the total 
    * @return the total of the values in the array

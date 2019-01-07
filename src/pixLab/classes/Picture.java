@@ -118,7 +118,7 @@ public class Picture extends SimplePicture
 	  {
 		  for (Pixel pixelObj : rowArray)
 		  {
-			  pixelObj.setGreen(100);
+			  pixelObj.setGreen(25);
 			  
 			  
 		  }
@@ -132,28 +132,13 @@ public class Picture extends SimplePicture
 	  {
 		  for (Pixel pixelObj : rowArray)
 		  {
-			  pixelObj.setRed(currentRed(pixelObj) + 50);
-			  pixelObj.setGreen(currentGreen(pixelObj) + 50);
-			  pixelObj.setBlue(currentBlue(pixelObj) + 50);
+			  pixelObj.setRed(pixelObj.getRed() + 50);
+			  pixelObj.setGreen(pixelObj.getGreen() + 50);
+			  pixelObj.setBlue(pixelObj.getBlue() + 50);
 		  }
 	  }
   }
   
-  public int currentRed(int value)
-  {
-	  int red = (value >> 16) & 0xff;
-	  return red;
-  }
-  public int currentGreen(int value)
-  {
-	  int green = (value >> 8) & 0xff;
-	  return green;
-  }
-  public int currentBlue(int value)
-  {
-	  int blue = value & 0xff;
-	  return blue;
-  }
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
