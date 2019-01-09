@@ -1,4 +1,6 @@
 package pixLab.classes;
+
+import java.awt.Color;
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -101,6 +103,16 @@ public class PictureTester
 	  cumber.explore();
   }
   
+  public static void testChromakey()
+  {
+	  Picture source = new Picture("Merc.JPG");
+	  Picture background = new Picture("SnowyMountains.JPG");
+	  source.explore();
+	  background.explore();
+	  source.chromakey(background, Color.gray);
+	  source.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -134,6 +146,7 @@ public class PictureTester
 //    testZeroRed();
 //    testFilter();
 //    testMirrorHorizontal();
-    testMessedUpCollage();
+//    testMessedUpCollage();
+	  testChromakey();
   }
 }
