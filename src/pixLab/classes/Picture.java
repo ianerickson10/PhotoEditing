@@ -354,6 +354,53 @@ public class Picture extends SimplePicture
 		  }
 	  }
   }
+  
+  public void shiftLeftRight(int amount)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Picture temp = new Picture(this);
+	  Pixel [][] copied = temp.getPixels2D();
+	  
+	  int shiftedValue = amount;
+	  int width = pixels[0].length;
+	  int height = pixels.length;
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  shiftedValue = (col + amount) % width;
+			  copied[row][col].setColor(pixels[row][shiftedValue].getColor());
+		  }
+	  }
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  pixels[row][col].setColor(copied[row][col].getColor());
+		  }
+	  }
+	  
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  shiftedValue = (row + amount) % height;
+			  copied[col][row].setColor(pixels[col][shiftedValue].getColor());
+		  }
+	  }
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; row < pixels[0].length; col++)
+		  {
+			  pixels[col][row].setColor(copied[col][row].getColor());
+		  }
+	  }
+  }
+  
+  
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */

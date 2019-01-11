@@ -113,6 +113,14 @@ public class PictureTester
 	  source.explore();
   }
   
+  public static void testShiftLeftRight()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.shiftLeftRight(50);
+	  beach.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -148,5 +156,6 @@ public class PictureTester
 //    testMirrorHorizontal();
 //    testMessedUpCollage();
 	  testChromakey();
+//	  testShiftLeftRight();
   }
 }
