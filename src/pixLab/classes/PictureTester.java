@@ -124,8 +124,11 @@ public class PictureTester
   public static void testHeckinMessUp()
   {
 	  Picture eclipse = new Picture("EclipseSmall.JPG");
-	  eclipse.heckinMessUp();
-	  
+	  Picture snow = new Picture("SnowyMountains.JPG");
+	  eclipse.explore();
+	  eclipse.heckinMessUp(snow);
+//	  eclipse.mirrorVertical();
+//	  eclipse.mirrorHorizontal();
 	  eclipse.explore();
   }
   

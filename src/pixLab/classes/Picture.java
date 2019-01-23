@@ -139,6 +139,12 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public static int randomIntRange(int min, int max)
+  {
+	    int num = (int)(Math.random()*((max-min)+1))+min;
+	    return num;
+  }
+  
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
@@ -333,15 +339,16 @@ public class Picture extends SimplePicture
     }
   }
   
-  public void heckinMessUp()
+  public void heckinMessUp(Picture replacement)
   {
 	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel [][] overlay = replacement.getPixels2D();
 	  
-	  for (int row = 0; row < (Math.random() * 6000); row++)
+	  for (int row = randomIntRange(0, 2000); row < (row + 300); row++)
 	  {
-		  for (int col = 0; col < (Math.random() * 4000); col++)
+		  for(int col = randomIntRange(0, 3000); col < (col + 300); col++)
 		  {
-			  zeroRed();
+			  pixels[row][col].setColor(overlay[row][col].getColor());
 		  }
 	  }
   }
