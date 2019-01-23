@@ -136,7 +136,7 @@ public class PictureTester
   {
 	  Picture source = new Picture("EclipseSmall.JPG");
 	  
-	  Picture hide = new Picture("GreyWall.JPG");
+	  Picture hide = new Picture("SmallWall.JPG");
 	  source.explore();
 	  hide.explore();
 	  source.hidePicture(hide);
