@@ -132,13 +132,26 @@ public class PictureTester
 	  eclipse.explore();
   }
   
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("EclipseSmall.JPG");
+	  
+	  Picture hide = new Picture("GreyWall.JPG");
+	  source.explore();
+	  hide.explore();
+	  source.hidePicture(hide);
+	  source.explore();
+	  source.revealPicture();
+	  source.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
   {
     // uncomment a call here to run a test
     // and comment out the ones you don't want
-    // to run
+    //to run
 //    testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
@@ -168,6 +181,7 @@ public class PictureTester
 //    testMessedUpCollage();
 //	  testChromakey();
 //	  testShiftLeftRight();
-	  testHeckinMessUp();
+//	  testHeckinMessUp();
+	  testSteganography();
   }
 }

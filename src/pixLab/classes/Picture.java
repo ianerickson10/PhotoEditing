@@ -139,9 +139,9 @@ public class Picture extends SimplePicture
 	  }
   }
   
-  public static int randomIntRange(int min, int max)
+  public static int randomIntRange(int max)
   {
-	    int num = (int)(Math.random()*((max-min)+1))+min;
+	    int num = (int)(Math.random()* max);
 	    return num;
   }
   
@@ -344,9 +344,9 @@ public class Picture extends SimplePicture
 	  Pixel [][] pixels = this.getPixels2D();
 	  Pixel [][] overlay = replacement.getPixels2D();
 	  
-	  for (int row = randomIntRange(0, 2000); row < (row + 300); row++)
+	  for (int row = randomIntRange(3000); row < (row + 300); row++)
 	  {
-		  for(int col = randomIntRange(0, 3000); col < (col + 300); col++)
+		  for(int col = randomIntRange(2000); col < (col + 300); col++)
 		  {
 			  pixels[row][col].setColor(overlay[row][col].getColor());
 		  }
@@ -414,7 +414,49 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void hidePicture(Picture hidden)
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  Pixel [][] hiddenPixels = hidden.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length && row < hiddenPixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length && col <hiddenPixels[0].length; col++)
+		  {
+			  if (hiddenPixels[row][col].colorDistance(Color.WHITE) > 5)
+			  {
+				  if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 != 1)
+				  {
+					  pixels [row][col].setRed(pixels[row][col].getRed() - 1);
+				  }
+			  }
+			  else if (pixels[row][col].getRed() > 0 && pixels[row][col].getRed() % 2 == 1)
+			  {
+				  pixels[row][col].setRed(pixels[row][col].getRed() - 1);
+			  }
+		  }
+	  }
+  }
   
+  public void revealPicture()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  if (pixels[row][col].getRed() % 2 != 1)
+			  {
+				  pixels[row][col].setColor(Color.blue);
+			  }
+			  else if (pixels[row][col].getRed() % 2 == 1)
+			  {
+				  pixels[row][col].setColor(Color.cyan);
+			  }
+		  }
+	  }
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
