@@ -333,9 +333,17 @@ public class Picture extends SimplePicture
     }
   }
   
-  public void hekinMessUp()
+  public void heckinMessUp()
   {
+	  Pixel [][] pixels = this.getPixels2D();
 	  
+	  for (int row = 0; row < (Math.random() * 6000); row++)
+	  {
+		  for (int col = 0; col < (Math.random() * 4000); col++)
+		  {
+			  zeroRed();
+		  }
+	  }
   }
   
   public void chromakey(Picture replacement, Color changeColor)
@@ -387,14 +395,14 @@ public class Picture extends SimplePicture
 		  for (int col = 0; col < pixels[0].length; col++)
 		  {
 			  shiftedValue = (row + amount) % height;
-			  copied[col][row].setColor(pixels[col][shiftedValue].getColor());
+			  copied[row][col].setColor(pixels[row][shiftedValue].getColor());
 		  }
 	  }
 	  for (int row = 0; row < pixels.length; row++)
 	  {
 		  for (int col = 0; row < pixels[0].length; col++)
 		  {
-			  pixels[col][row].setColor(copied[col][row].getColor());
+			  pixels[row][col].setColor(copied[row][col].getColor());
 		  }
 	  }
   }

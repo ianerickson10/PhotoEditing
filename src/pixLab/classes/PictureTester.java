@@ -117,8 +117,16 @@ public class PictureTester
   {
 	  Picture beach = new Picture("beach.jpg");
 	  beach.explore();
-	  beach.shiftLeftRight(50);
+	  beach.shiftLeftRight(10);
 	  beach.explore();
+  }
+  
+  public static void testHeckinMessUp()
+  {
+	  Picture eclipse = new Picture("EclipseSmall.JPG");
+	  eclipse.heckinMessUp();
+	  
+	  eclipse.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -155,7 +163,8 @@ public class PictureTester
 //    testFilter();
 //    testMirrorHorizontal();
 //    testMessedUpCollage();
-	  testChromakey();
+//	  testChromakey();
 //	  testShiftLeftRight();
+	  testHeckinMessUp();
   }
 }
