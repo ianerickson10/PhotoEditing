@@ -344,11 +344,37 @@ public class Picture extends SimplePicture
 	  Pixel [][] pixels = this.getPixels2D();
 	  Pixel [][] overlay = replacement.getPixels2D();
 	  
-	  for (int row = randomIntRange(3000); row < (row + 300); row++)
+	  for (int count = 0; count < 2; count++)
 	  {
-		  for(int col = randomIntRange(2000); col < (col + 300); col++)
+		  for (int row = randomIntRange(3000); row < (row + 20) && row < pixels.length ; row++)
 		  {
-			  pixels[row][col].setColor(overlay[row][col].getColor());
+			  for(int col = randomIntRange(2000); col < (col + 20) && col < pixels[0].length; col++)
+			  {
+				  pixels[row][col].setColor(overlay[row][col].getColor());
+			  }
+		  }
+	  }
+	  
+	  for (int count = 0; count < 2; count++)
+	  {
+		  for (int row = randomIntRange(3000); row < (row + 50) && row < pixels.length ; row++)
+		  {
+			  for(int col = 0 ; col < pixels[0].length; col++)
+			  {
+				  int random = randomIntRange(3);
+				  if (random == 1)
+				  {
+					  pixels[row][col].setBlue(0);
+				  }
+				  else if (random == 2)
+				  {
+					  pixels[row][col].setRed(0);
+				  }
+				  else if (random == 3)
+				  {
+					  pixels[row][col].setGreen(0);
+				  }
+			  }
 		  }
 	  }
   }

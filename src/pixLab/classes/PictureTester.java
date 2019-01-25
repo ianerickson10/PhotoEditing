@@ -127,8 +127,6 @@ public class PictureTester
 	  Picture snow = new Picture("SnowyMountains.JPG");
 	  eclipse.explore();
 	  eclipse.heckinMessUp(snow);
-//	  eclipse.mirrorVertical();
-//	  eclipse.mirrorHorizontal();
 	  eclipse.explore();
   }
   
@@ -181,7 +179,7 @@ public class PictureTester
 //    testMessedUpCollage();
 //	  testChromakey();
 //	  testShiftLeftRight();
-//	  testHeckinMessUp();
-	  testSteganography();
+	  testHeckinMessUp();
+//	  testSteganography();
   }
 }
