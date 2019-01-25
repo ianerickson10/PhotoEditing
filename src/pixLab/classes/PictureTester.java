@@ -1,6 +1,8 @@
 package pixLab.classes;
 
 import java.awt.Color;
+
+import javax.swing.JOptionPane;
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -74,7 +76,7 @@ public class PictureTester
   {
 	  Picture beach = new Picture("beach.jpg");
 	  beach.explore();
-	  beach.filter(7);
+	  beach.filter(10);
 	  beach.explore();
   }
   
@@ -142,6 +144,14 @@ public class PictureTester
 	  source.explore();
   }
   
+  public static void testSepia()
+  {
+	  Picture snow = new Picture("SnowyMountains.JPG");
+	  snow.explore();
+	  snow.sepia(5);
+	  snow.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -173,12 +183,13 @@ public class PictureTester
     //testGetAverageForColumn(0);
 //    testReverseMirrorVertical();
 //    testZeroRed();
-    testFilter();
+//	  testFilter();
 //    testMirrorHorizontal();
 //    testMessedUpCollage();
 //	  testChromakey();
 //	  testShiftLeftRight();
 //	  testHeckinMessUp();
 //	  testSteganography();
+	  testSepia();
   }
 }

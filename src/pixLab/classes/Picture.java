@@ -484,6 +484,21 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void sepia(int filterStrength)
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  pixels[row][col].setBlue(pixels[row][col].getBlue() - (filterStrength * 2));
+			  pixels[row][col].setGreen(pixels[row][col].getGreen() - (filterStrength));
+		  }
+	  }
+  }
+  
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
