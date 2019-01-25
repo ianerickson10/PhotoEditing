@@ -111,30 +111,30 @@ public class Picture extends SimplePicture
 	    }
   }
   
-  public void filter()
+  public void filter(int filterStrength)
   {
 	  Pixel[][] pixels = this.getPixels2D();
+	  
 	  for (Pixel[] rowArray : pixels)
 	  {
 		  for (Pixel pixelObj : rowArray)
 		  {
-			  pixelObj.setGreen(25);
-			  
-			  
+			  pixelObj.setGreen(pixelObj.getGreen() - (filterStrength * 2)); 
 		  }
 	  }
+	  exposureUp(filterStrength);
   }
   
-  public void exposureUp()
+  public void exposureUp(int amountUp)
   {
 	  Pixel[][] pixels = this.getPixels2D();
 	  for (Pixel[] rowArray : pixels)
 	  {
 		  for (Pixel pixelObj : rowArray)
 		  {
-			  pixelObj.setRed(pixelObj.getRed() + 50);
-			  pixelObj.setGreen(pixelObj.getGreen() + 50);
-			  pixelObj.setBlue(pixelObj.getBlue() + 50);
+			  pixelObj.setRed(pixelObj.getRed() + amountUp);
+			  pixelObj.setGreen(pixelObj.getGreen() + amountUp);
+			  pixelObj.setBlue(pixelObj.getBlue() + amountUp);
 		  }
 	  }
   }

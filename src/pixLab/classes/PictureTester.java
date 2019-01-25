@@ -74,8 +74,7 @@ public class PictureTester
   {
 	  Picture beach = new Picture("beach.jpg");
 	  beach.explore();
-	  beach.filter();
-	  beach.exposureUp();
+	  beach.filter(7);
 	  beach.explore();
   }
   
@@ -174,12 +173,12 @@ public class PictureTester
     //testGetAverageForColumn(0);
 //    testReverseMirrorVertical();
 //    testZeroRed();
-//    testFilter();
+    testFilter();
 //    testMirrorHorizontal();
 //    testMessedUpCollage();
 //	  testChromakey();
 //	  testShiftLeftRight();
-	  testHeckinMessUp();
+//	  testHeckinMessUp();
 //	  testSteganography();
   }
 }
