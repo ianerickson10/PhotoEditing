@@ -346,9 +346,9 @@ public class Picture extends SimplePicture
 	  
 	  for (int count = 0; count < 2; count++)
 	  {
-		  for (int row = randomIntRange(3000); row < (row + 20) && row < pixels.length ; row++)
+		  for (int row = randomIntRange(6000); row < (row + 20) && row < pixels.length ; row++)
 		  {
-			  for(int col = randomIntRange(2000); col < (col + 20) && col < pixels[0].length; col++)
+			  for(int col = randomIntRange(4000); col < (col + 20) && col < pixels[0].length; col++)
 			  {
 				  pixels[row][col].setColor(overlay[row][col].getColor());
 			  }
@@ -357,20 +357,20 @@ public class Picture extends SimplePicture
 	  
 	  for (int count = 0; count < 2; count++)
 	  {
-		  for (int row = randomIntRange(3000); row < (row + 50) && row < pixels.length ; row++)
+		  for (int row = 0 ; row < (row + 50) && row < pixels.length ; row++)
 		  {
 			  for(int col = 0 ; col < pixels[0].length; col++)
 			  {
 				  int random = randomIntRange(3);
-				  if (random == 1)
+				  if (random == 0)
 				  {
 					  pixels[row][col].setBlue(0);
 				  }
-				  else if (random == 2)
+				  else if (random == 1)
 				  {
 					  pixels[row][col].setRed(0);
 				  }
-				  else if (random == 3)
+				  else if (random == 2)
 				  {
 					  pixels[row][col].setGreen(0);
 				  }
@@ -494,6 +494,19 @@ public class Picture extends SimplePicture
 		  {
 			  pixels[row][col].setBlue(pixels[row][col].getBlue() - (filterStrength * 2));
 			  pixels[row][col].setGreen(pixels[row][col].getGreen() - (filterStrength));
+		  }
+	  }
+  }
+  
+  public void ummIDKYet(int filterStrength)
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  
 		  }
 	  }
   }

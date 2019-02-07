@@ -76,7 +76,7 @@ public class PictureTester
   {
 	  Picture beach = new Picture("beach.jpg");
 	  beach.explore();
-	  beach.filter(10);
+	  beach.filter(100);
 	  beach.explore();
   }
   
@@ -124,11 +124,12 @@ public class PictureTester
   
   public static void testHeckinMessUp()
   {
-	  Picture eclipse = new Picture("EclipseSmall.JPG");
+	  Picture eclipse = new Picture("Window.jpeg");
 	  Picture snow = new Picture("SnowyMountains.JPG");
 	  eclipse.explore();
 	  eclipse.heckinMessUp(snow);
 	  eclipse.explore();
+	  snow.explore();
   }
   
   public static void testSteganography()
@@ -148,8 +149,13 @@ public class PictureTester
   {
 	  Picture snow = new Picture("SnowyMountains.JPG");
 	  snow.explore();
-	  snow.sepia(5);
+	  snow.sepia(20);
 	  snow.explore();
+  }
+  
+  public static void testUmmIDKYet()
+  {
+	  
   }
   
   /** Main method for testing.  Every class can have a main
@@ -191,5 +197,6 @@ public class PictureTester
 //	  testHeckinMessUp();
 //	  testSteganography();
 	  testSepia();
+//	  testUmmIDKYet();
   }
 }
